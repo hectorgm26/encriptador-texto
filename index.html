@@ -18,12 +18,14 @@
         </header>
 
         <main class="contenido">
-            <label for="texto"><h1><strong><em>Ingrese el texto aquí:</em></strong></h1></label>
-            <br>
-            <br>
-            <div class="container-texto">
+          <label for="texto"><h1><strong><em>Ingrese el texto aquí:</em></strong></h1></label>
+          <br><br>
+          <div class="container-texto">
               <textarea id="texto" class="texto-a-convertir" name="texto-a-convertir" rows="10" cols="120" required placeholder="Ingrese el texto aquí..."></textarea>
-            </div>
+          </div>
+          <div id="mensaje-advertencia" class="mensaje-advertencia" style="display: none;">
+              <p>Advertencia: Solo se permiten letras minúsculas sin acentos.</p>
+          </div>
 
 
         </main>

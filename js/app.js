@@ -1,7 +1,11 @@
-// Función para encriptar el texto
+document.getElementById('texto').addEventListener('input', function() {
+  validarTexto(this.value);
+});
+
 function encriptarTexto() {
   const textoOriginal = document.getElementById('texto').value.toLowerCase();
-  let textoEncriptado = textoOriginal
+  const textoValidado = validarTexto(textoOriginal);
+  let textoEncriptado = textoValidado
       .replace(/e/g, "enter")
       .replace(/i/g, "imes")
       .replace(/a/g, "ai")
@@ -11,10 +15,10 @@ function encriptarTexto() {
   mostrarTextoConvertido(textoEncriptado);
 }
 
-// Función para desencriptar el texto
 function desencriptarTexto() {
   const textoEncriptado = document.getElementById('texto').value.toLowerCase();
-  let textoDesencriptado = textoEncriptado
+  const textoValidado = validarTexto(textoEncriptado);
+  let textoDesencriptado = textoValidado
       .replace(/enter/g, "e")
       .replace(/imes/g, "i")
       .replace(/ai/g, "a")
@@ -24,7 +28,6 @@ function desencriptarTexto() {
   mostrarTextoConvertido(textoDesencriptado);
 }
 
-// Función para mostrar el texto convertido
 function mostrarTextoConvertido(texto) {
   const placeholder = document.querySelector('.texto-placeholder');
   const textoConvertido = document.querySelector('.texto-convertido');
@@ -40,7 +43,6 @@ function mostrarTextoConvertido(texto) {
   }
 }
 
-// Función para copiar el texto convertido
 function copiarTexto() {
   const textoConvertido = document.querySelector('.texto-convertido');
   textoConvertido.select();
@@ -48,7 +50,35 @@ function copiarTexto() {
   alert('Texto copiado al portapapeles');
 }
 
-// Se llama a la funcion al cargar al inicio la página
+function validarTexto(texto) {
+  const textoValidado = texto
+      .replace(/[ÁÉÍÓÚÜ]/gi, '') // Elimina acentos
+      .replace(/[A-Z]/g, '') // Elimina mayúsculas
+      .replace(/[^a-z\s]/g, ''); // Elimina caracteres no permitidos
+
+  const mensajeAdvertencia = document.getElementById('mensaje-advertencia');
+  if (texto !== textoValidado) {
+    mostrarAdvertencia();
+  } else {
+    ocultarAdvertencia();
+  }
+  
+  // Actualiza el textarea con el texto validado
+  document.getElementById('texto').value = textoValidado;
+
+  return textoValidado;
+}
+
+function mostrarAdvertencia() {
+  const mensajeAdvertencia = document.getElementById('mensaje-advertencia');
+  mensajeAdvertencia.style.display = 'block';
+}
+
+function ocultarAdvertencia() {
+  const mensajeAdvertencia = document.getElementById('mensaje-advertencia');
+  mensajeAdvertencia.style.display = 'none';
+}
+
 window.onload = function() {
   mostrarTextoConvertido('');
 }

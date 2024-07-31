@@ -69,6 +69,15 @@ body {
   grid-area: contenido;
 }
 
+.mensaje-advertencia {
+  color: red;
+  background-color: #FFE4E4;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+}
+
 .container-fluid .siderbar-salida-texto {
   grid-area: sidebar-salida-texto;
   background: #FF6969;
