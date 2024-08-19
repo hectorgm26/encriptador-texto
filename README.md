@@ -23,7 +23,7 @@ Este proyecto se realizó, en base al challenge final del curso de Lógica de Pr
 * [Conclusión](#conclusión)
 
 ## Descripción del proyecto
-Este proyecto consiste en un encriptador de texto desarrollado como parte del challenge final, del curso de Lógica de Programación de Alura Latam, como parte del programa One de Oracle. El objetivo era crear una aplicación web que permitiese encriptar y desencriptar un texto, utilizando ciertas reglas de sustitución de caracteres.
+Este proyecto consiste en un encriptador de texto desarrollado como parte del challenge final, del curso de Lógica de Programación de Alura Latam, como parte del programa One de Oracle. El objetivo era crear una aplicación web que permitiese encriptar y desencriptar un texto, mediante un cifrado por sustitución, una de las técnicas más simples dentro de la criptografía.
 
 ## Estado del proyecto
 Terminado
